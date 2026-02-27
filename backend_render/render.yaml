@@ -3,12 +3,6 @@ services:
     name: pv-ai-telecom-backend
     env: python
     plan: free
+    rootDir: backend_render
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: ADMIN_USER
-        value: admin
-      - key: ADMIN_PASS
-        value: change_me_strong
-      - key: JWT_SECRET
-        generateValue: true
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
